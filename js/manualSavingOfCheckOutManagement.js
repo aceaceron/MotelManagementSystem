@@ -5,13 +5,13 @@ import { saveCheckInData } from './checkInCheckOutManagement.js';
 
 // Firebase configuration object
 const firebaseConfig = {
-    apiKey: "AIzaSyB3ueNqM29tpPKOsGyZ94uuYMFhkfXrT3M",
-    authDomain: "lcdedb.firebaseapp.com",
-    databaseURL: "https://lcdedb-default-rtdb.firebaseio.com",
-    projectId: "lcdedb",
-    storageBucket: "lcdedb.appspot.com",
-    messagingSenderId: "113814487086",
-    appId: "1:113814487086:web:a03f7044d7f838a8151fbf"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase

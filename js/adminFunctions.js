@@ -6,13 +6,13 @@ import { displayComments } from './manageComments.js';
 
 // Firebase configuration object
 const firebaseConfig = {
-    apiKey: "AIzaSyB3ueNqM29tpPKOsGyZ94uuYMFhkfXrT3M",
-    authDomain: "lcdedb.firebaseapp.com",
-    databaseURL: "https://lcdedb-default-rtdb.firebaseio.com",
-    projectId: "lcdedb",
-    storageBucket: "lcdedb.appspot.com",
-    messagingSenderId: "113814487086",
-    appId: "1:113814487086:web:a03f7044d7f838a8151fbf"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
@@ -23,28 +23,6 @@ function hideLoadingScreen() {
     document.getElementById('loadingScreen').style.display = 'none';
 }
 
-// // Get the modal
-// var modal = document.getElementById("systemUpdate");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("closeUpdateModal")[0];
-
-// // Show the modal when the page loads
-// window.onload = function() {
-//     modal.style.display = "block";
-// };
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//     modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// };
 
 window.onclick = function (event) {
     if (!event.target.matches('.menuLogo')) {
