@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | Motel Management System</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
+
+
+    <style>
+        * {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+            font-family: 'Footlight MT Light';
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg {
+            background-image: url("img/bg01.png");
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* Ensure the background is behind other elements */
+        }
+
+        .logo {
+            width: 30vh;
+            display: inline-block;
+            margin: 50px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: auto;
+            height: 70%;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 20px;
+            transition: all 0.5s ease;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        @media screen and (max-width: 700px) {
+            .container,
+            button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="bg"></div>
+    
+    <div class="container">
+        <img src="img/logo.png" class="logo" alt="Logo">
+        <h2>ERROR 404</h2>
+        <p style="color: red;">You are trying to access a page that does not exist.</p>
+        <a href="https://lcdedb.web.app">
+            <button class="btn" type="submit">Go back to homepage</button>
+        </a>
+    </div>
+
+</body>
+
+</html>

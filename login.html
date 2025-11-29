@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Motel Management System</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
+
+
+    <style>
+        * {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+            font-family: 'Footlight MT Light';
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bg {
+            background-image: url("img/bg01.png");
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* Ensure the background is behind other elements */
+        }
+
+        .logo {
+            width: 30vh;
+            display: inline-block;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: auto;
+            height: 70%;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            text-align: left;
+            font-size: 30px;
+        }
+
+        label,
+        input,
+        button {
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 40px;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 30vw;
+        }
+
+        input {
+            font-size: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 30px;
+            transition: all 0.5s ease;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        #message {
+            color: red;
+            font-size: 20px;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            color: white;
+            font-size: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-screen .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .login-container,
+            #loginForm,
+            input,
+            button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="bg"></div>
+    
+    <div class="login-container">
+        <img src="img/logo2.png" class="logo" alt="Logo">
+        <h2>Sign in</h2>
+        <form id="loginForm">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button class="btn" type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <script type="module" src="js/login.js"></script>
+
+</body>
+
+</html>

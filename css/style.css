@@ -1,0 +1,1247 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode .dropdown-nav {
+    background-color: #333333;
+}
+
+header {
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    color: red;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 9999;
+}
+
+header .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+header a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-button,
+.dropdown-nav {
+    display: none;
+}
+
+.logo {
+    height: 80px;
+}
+
+.container {
+    display: flex;
+    padding-top: 95px;
+    background-color: lightgreen;
+}
+
+.reservationInfo input::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reservationInfo label,
+.hide-label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.info {
+    width: 50%;
+    height: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+    color: black;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+}
+
+.info.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column; /* Stacks the child elements vertically */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background-color: lightgreen;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}
+
+.reservationQuery-container {
+    width: 90%;
+    overflow: hidden;
+    max-height: 0; /* Collapsed initially */
+    opacity: 0; /* Hidden initially */
+    transform: translateY(-10px); /* Slide up effect */
+    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+    background: inherit;
+}
+
+.reservationQuery-container.active {
+    max-height: 300px; /* Adjust as needed */
+    opacity: 1;
+    transform: translateY(0);
+    border-color: transparent;
+}
+
+.confirm-understand {
+    display: inline-block;
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.confirm-understand:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: translateY(-2px);
+}
+
+.confirm-understand:active {
+    background-color: #3e8e41;
+    transform: translateY(0);
+}
+
+#searchBar,  #phoneNumberReservationQuery, #checkInTimeReservationQuery {
+    flex: 1;
+    border: none;
+    outline: none;
+    margin: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 30px;
+    height: 100%;
+}
+
+#searchBar {
+    width: 80%;
+}
+
+#phoneNumberReservationQuery, #checkInTimeReservationQuery {
+    width: 100%;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-container:hover {
+    border-color: #888; /* Highlight border on hover */
+}
+
+.search-container:focus-within {
+    border-color: #007bff; /* Highlight border when focused */
+}
+
+.reservationInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.reservationInfo label {
+    width: 30%;
+    margin: 0;
+    font-size: 14px;
+}
+
+.reservationInfo input,
+#date,
+#dropdownTime,
+#dropdown0,
+#dropdown1,
+#dropdown2,
+#numOfGuest {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+.reservationInfo input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reservationInfo input.invalid {
+    border-color: red;
+}
+
+.reservationInfo select {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reservationInfo select.invalid {
+    border-color: red;
+}
+
+
+#cancelReservation {
+    background-color: red;
+}
+
+#cancelReservation:hover {
+    background-color: rgb(142, 0, 0);
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.checkbox {
+    text-align: left;
+    width: auto;
+    align-content: center;
+}
+
+.popup,
+.popup2 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black background with opacity */
+}
+
+.popup-content,
+.popup-content2 {
+    height: 60%;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: black;
+    overflow: auto;
+}
+
+.close-btn,
+.close-btn2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.close-btn2:hover,
+.close-btn2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.confirm {
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    float: right;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    width: 200px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.confirm:hover {
+    background-color: green;
+    color: white;
+}
+
+.confirm:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+    color: darkgray;
+}
+
+
+.backgroundphoto {
+    background-image: url('../img/bg01.png');
+    /* Path to your background image */
+    background-size: cover;
+    /* Scale the image to cover the container */
+    background-position: center;
+    /* Center the image in the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    width: 70%;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(100px);
+    /* Initially positioned below */
+    transition: all 0.9s ease-out;
+}
+
+.backgroundphoto.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+a:hover {
+    color: green;
+}
+
+.tac,
+.eventtac {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tac:hover,
+.eventtac:hover {
+    color: red;
+}
+
+.buttonsForReservation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.postPaymentModal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999999;
+}
+
+.postPaymentWindow div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} 
+
+.postPaymentWindow, .cancelReservation {
+    background-color: white;
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#reservationPendingPaymentStatus div {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#reservationPendingPaymentStatus input {
+    padding: 5px;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+#reservationPayment {
+    width: auto;
+}
+
+#gcashInfo {
+    width: auto;
+    height: 250px;
+}
+
+.postPaymentWindow {
+    display: block;
+}
+
+.cancelReservation {
+    display: none;
+    flex-direction: column;
+}
+
+.cancelReservation input {
+    padding: 10px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.postPaymentWindow div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.postPaymentWindow div div {
+    display: flex;
+    flex-direction: column;
+}
+
+.postPaymentWindow div  {
+    width: 100%;
+}
+
+.postPaymentWindow div div span label {
+    width: 60%;
+}
+.postPaymentWindow div div span input {
+    width: 31vw;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.postPaymentWindow div button {
+    text-align: center;
+    font-size: large;
+    border-radius: 30px;
+    padding: 5px;
+    background-color: #28a745;
+    color: white;
+    transition: 0.3s all ease;
+}
+
+.postPaymentWindow div button:hover {
+    background-color: darkgreen;
+}
+.container2 {
+    display: flex;
+}
+
+.content {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+}
+
+.content iframe {
+    border-radius: 30px;
+    width: 500px;
+    height: 400px;
+}
+
+body.dark-mode .content {
+    color: #121212;
+}
+
+.content p {
+    font-size: 24px;
+}
+
+.content.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.container3 {
+    height: auto;
+}
+
+.container3 .container3-content h1 {
+    font-size: 50px;
+    text-align: left;
+}
+
+.container3 .container3-content {
+    margin-left: 100px;
+    margin-right: 100px;
+    color: green;
+    flex-grow: 1;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+}
+
+.container3 .container3-content.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+.container3 .gallery-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container3 .gallery-track {
+    display: flex;
+    width: calc(100% * 24); /* Adjust based on the number of images */
+    animation: slide 30s linear infinite;
+}
+
+.container3 .gallery-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px; /* Adjust for visible image width */
+    margin-right: 20px;
+}
+
+.container3 .gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-15%);
+    }
+}
+
+.container3 .gallery-item:hover img {
+    transform: scale(1.1);
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.commentsAndInfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: #333333;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.container4 {
+    padding: 20px;
+    align-items: left;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-box {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 5px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+    font-family: 'Footlight MT Light';
+    color: white;
+}
+
+.comment-box.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.comment-box input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Footlight MT Light';
+}
+
+.comment-box textarea {
+    margin-top: 5px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.comment-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.displayComments {
+    height: auto;
+    padding: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.comments-list {
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.comments-list.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.comment {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+
+.comment .profileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.comment-image {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+}
+
+
+body.dark-mode .profileIcon {
+    background-color: white;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-details .name {
+    font-weight: bold;
+}
+
+.comment-details .date-time {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.container5 {
+    padding: 20px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+    width: 300px;
+    color: white;
+}
+
+.container5.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.container5 ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+
+.container5 ul a {
+    text-decoration: none;
+    color: black;
+}
+
+body.dark-mode .container5 ul a {
+    color: white;
+}
+
+.contactinfo {
+    width: 50px;
+    padding: 10px;
+}
+
+body.dark-mode .contactinfo {
+    background: white;
+    border-radius: 50%;
+}
+
+.container6 {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially positioned below */
+    transition: all 0.5s ease-out;
+}
+
+.loginpage {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.loginpage:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.container6.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.container6-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bg01.png');
+    /* Path to your background image */
+    background-size: cover;
+    /* Scale the image to cover the container */
+    background-position: center;
+    /* Center the image in the container */
+    filter: blur(5px);
+    /* Blur effect */
+    z-index: 1;
+}
+
+.container6 h3 {
+    font-size: 20px;
+}
+
+.container6 p {
+    font-size: 20px;
+}
+
+.container6-content1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.container6-content2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container6-content3 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 40px;
+    text-shadow: 1px 1px black;
+}
+
+.staffphoto {
+    height: 200px;
+    border-radius: 50%;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.loading-screen {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.loading-screen .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    margin-top: 25%;
+    margin-left: 47.5%;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        height: 50px;
+    }
+
+    header .nav {
+        display: none;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    /* Basic styling for the menu button */
+    .menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        display: block;
+    }
+
+    .menuLogo,
+    .none {
+        width: 20px;
+    }
+
+    .postPaymentWindow h1, .postPaymentWindow p, .postPaymentWindow h3 {
+        font-size: small;
+    }
+
+    .dropdown-nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 4px;
+        z-index: 1;
+    }
+
+    .dropdown-nav a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: red;
+        width: 90%;
+    }
+
+    .dropdown-nav a:hover {
+        background-color: #ddd;
+    }
+
+    .menu-button.active+.dropdown-nav {
+        display: block;
+    }
+
+    .search-container {
+        width: 90%;
+        background-color: transparent !important;
+    }
+
+    .search-container div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #reservationQueryContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #searchBar {
+        width: 70%;
+    }
+
+    #phoneNumberReservationQuery {
+        width: 90%;
+    }
+
+    #checkInTimeReservationQuery {
+        width: 95%;
+    }
+
+    .container {
+        background-color: transparent;
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        padding-top: 50px;
+        overflow: hidden;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../img/bg01.png');
+        background-size: cover;
+        background-position: center;
+        filter: blur(1px);
+        z-index: -1;
+    }
+
+    .info {
+        position: relative;
+        width: 95%;
+        padding: 20px;
+        height: 100%;
+        margin: 0;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    body.dark-mode .info {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+    }
+
+    #reservationForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reservationInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .reservationInfo label {
+        width: 30%;
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .reservationInfo input,
+    #date,
+    #dropdownTime,
+    #dropdown0,
+    #dropdown1,
+    #dropdown2,
+    #numOfGuest {
+        width: 100%;
+        margin: 0;
+    }
+
+    .reservationInfo .hide-label {
+        display: none;
+    }
+
+    .reservationInfo input::placeholder {
+        opacity: 1;
+    }
+
+    .backgroundphoto {
+        display: none;
+    }
+
+    .confirm {
+        font-size: 14px;
+        width: auto;
+    }
+
+    .postPaymentWindow {
+        width: 90%;
+        font-size: smaller;
+    }
+
+    #reservationPendingPaymentStatus div {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-around;
+    }
+
+    .container2 {
+        padding: 0;
+        min-width: 95%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .content {
+        margin: 0;
+        width: 90%;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .content iframe {
+        width: 90%;
+        border-radius: 30px;
+    }
+
+    .commentsAndInfo {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .container3 {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container3 .container3-content {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: 25px;
+        margin-bottom: 25px;
+    }
+
+    .container3 .container3-content h1 {
+        font-size: 32px;
+    }
+
+    .container3 .container3-content .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container4 {
+        width: 100%;
+        align-items: center;
+        padding: 0;
+        padding-top: 40px;
+    }
+
+    .comment-box {
+        width: 90%;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .comment-box input,
+    .comment-box textarea {
+        width: 90%;
+    }
+
+    .container5 {
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 80px;
+    }
+
+    .container5 h2 {
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .container5 ul li {
+        font-size: 14px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .container5 ul li img {
+        width: 30px;
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    .container6 {
+        height: 100%;
+    }
+
+    .container6-content1 {
+        flex-direction: column;
+    }
+
+    .staffphoto {
+        height: 100px;
+    }
+
+    .container6 h3 {
+        font-size: 20px;
+    }
+
+    .container6 p {
+        font-size: 14px;
+    }
+
+    .container6-content1 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container6-content2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        padding-bottom: 20px;
+    }
+
+    .container6-content2 div {
+        width: 60%;
+    }
+
+    .container6-content2 h1 {
+        font-size: 30px;
+    }
+}

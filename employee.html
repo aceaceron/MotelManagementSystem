@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee | Motel Management System</title>
+    <link rel="stylesheet" href="css/staffs.css">
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="header">
+        <button id="copyDataButton" style="display: none;">Copy Data</button>
+        <div class="menu-container">
+            <button class="menu-button" style="display: none;"><img src="img/menu.png" class="menuLogo"></button>
+
+            <a href="https://lcdedb.web.app"><img src="img/logo.png" class="logo"></a>
+        </div>
+
+        <div class="header-right">
+            <i class="fa-solid fa-list-check"></i>
+            <h3 class="hello">Hello, Employee
+                <div class="date-time" id="dateTime"></div>
+            </h3>
+            <button id="logoutButton" class="logout-button"><i
+                    class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        </div>
+    </div>
+    <div class="to-do-list">
+        <div class="to-do-list-container" id="toDoListContainer">
+            <div class="close-btn" id="closeBtnToDoList">&times;</div>
+        </div>
+    </div>
+
+    <div class="roomChecking">
+        <div class="roomChecking-container"></div>
+    </div>
+
+    <div class="dashboard">
+        <div class="reservation"><p class="noReservationsFound">No reservation found.</p></div>
+        <div id="roomSelectionModal" class="roomSelectModal">
+            <div class="roomSelectModal-content">
+                <h3>Select a room to assign the reservation:</h3>
+                <div id="roomNumbersContainer" class="room-numbers">
+                    <div class="room-numbers-sub">
+                        <div class="room-number" data-room="1">1</div>
+                        <div class="room-number" data-room="2">2</div>
+                        <div class="room-number" data-room="3">3</div>
+                        <div class="room-number" data-room="4">4</div>
+                        <div class="room-number" data-room="5">5</div>
+                    </div>
+                    <div class="room-numbers-sub">
+                        <div class="room-number" data-room="6">6</div>
+                        <div class="room-number" data-room="7">7</div>
+                        <div class="room-number" data-room="8">8</div>
+                        <div class="room-number" data-room="9">9</div>
+                        <div class="room-number" data-room="10">10</div>
+                    </div>
+                </div>
+                <button id="closeRoomSelectionModal">&times;</button>
+            </div>
+        </div>
+
+        <div class="validatingReservationPayment">
+            <div class="validatingReservationPayment-content">
+                <div>
+                    <h2 id="validatingReservationNum">Validating Reservation #</h2>
+                </div>
+                <div>
+                    <div>       
+                        <div>
+                            <p id="validatingReferenceCodeGCash"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="reasonForRejectPayment" placeholder="Reason if payment rejected">
+                            <button id="rejectReservationPayment">REJECT PAYMENT</button>
+                        </div>
+                        <div>
+                            <button id="acceptReservationPayment">PAYMENT VALIDATED</button>
+                        </div>
+                    </div><hr>
+                    <div> 
+                        <img id="validatingGCashReceipt">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirmedReceiptWindow">
+            <div class="confirmedReceiptModal">
+                <h2>SAVE O.R. NUMBER</h2><hr>
+                <p style="color: red;">The system can not print or create an official receipt, this just save the official receipt number with the check in data to the database.</p>
+                <span>
+                    <div>
+                        <input type="text" id="officialReceiptNumber" placeholder="Enter receipt number here">
+                    </div>
+                    <div>          
+                        <button id="confirmReceiptNumber">CONFIRM</button>
+                        <button id="cancelReceiptNumber">CANCEL</button>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="invalidRsvn" id="invalidRsvn">
+            <div id="invalidReservationModal" class="invalidReservation">
+                <div class="invalidReservationModal-content">
+                    <span class="closeInvalidModalBtn" id="closeInvalidModal">&times;</span>
+                    <p id="invalidReservationMessage"></p>
+
+                    <div class="moveToFailed">
+                        <p id="reasonLabel">Reason: </p><input type="text" class="reasonOfFailure">
+                    </div>
+                    <button id="moveToFailed">Delete Data</button>
+
+                    <div class="editReservationValuesWindow">
+                        <select id="editReservationKey" name="editReservationKeytoEdit" class="editReservationKeySelect">
+                            <option value="lastName" class="reservationKeys">Last name: </option>
+                            <option value="firstName" class="reservationKeys">First name: </option>
+                            <option value="phoneNumber" class="reservationKeys">Phone number: </option>
+                            <option value="emailAddress" class="reservationKeys">Email address: </option>
+                            <option value="checkInTime" class="reservationKeys">Check-in Time: </option>
+                        </select>
+                        <input type="text" class="editReservationValue" id="editReservationValue" style="display: flex;">
+                        <select id="editReservationValueForCheckInTime" name="editReservationValueForCheckInTime" style="display: none;">
+                            <option value="8:00 AM">8:00 AM</option>
+                            <option value="8:10 AM">8:10 AM</option>
+                            <option value="8:20 AM">8:20 AM</option>
+                            <option value="8:30 AM">8:30 AM</option>
+                            <option value="8:40 AM">8:40 AM</option>
+                            <option value="8:50 AM">8:50 AM</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="9:10 AM">9:10 AM</option>
+                            <option value="9:20 AM">9:20 AM</option>
+                            <option value="9:30 AM">9:30 AM</option>
+                            <option value="9:40 AM">9:40 AM</option>
+                            <option value="9:50 AM">9:50 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:10 AM">10:10 AM</option>
+                            <option value="10:20 AM">10:20 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="10:40 AM">10:40 AM</option>
+                            <option value="10:50 AM">10:50 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:10 AM">11:10 AM</option>
+                            <option value="11:20 AM">11:20 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="11:40 AM">11:40 AM</option>
+                            <option value="11:50 AM">11:50 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:10 PM">12:10 PM</option>
+                            <option value="12:20 PM">12:20 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="12:40 PM">12:40 PM</option>
+                            <option value="12:50 PM">12:50 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:10 PM">1:10 PM</option>
+                            <option value="1:20 PM">1:20 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="1:40 PM">1:40 PM</option>
+                            <option value="1:50 PM">1:50 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="2:10 PM">2:10 PM</option>
+                            <option value="2:20 PM">2:20 PM</option>
+                            <option value="2:30 PM">2:30 PM</option>
+                            <option value="2:40 PM">2:40 PM</option>
+                            <option value="2:50 PM">2:50 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="3:10 PM">3:10 PM</option>
+                            <option value="3:20 PM">3:20 PM</option>
+                            <option value="3:30 PM">3:30 PM</option>
+                            <option value="3:40 PM">3:40 PM</option>
+                            <option value="3:50 PM">3:50 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="4:10 PM">4:10 PM</option>
+                            <option value="4:20 PM">4:20 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                            <option value="4:40 PM">4:40 PM</option>
+                            <option value="4:50 PM">4:50 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="5:10 PM">5:10 PM</option>
+                            <option value="5:20 PM">5:20 PM</option>
+                            <option value="5:30 PM">5:30 PM</option>
+                            <option value="5:40 PM">5:40 PM</option>
+                            <option value="5:50 PM">5:50 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="6:10 PM">6:10 PM</option>
+                            <option value="6:20 PM">6:20 PM</option>
+                            <option value="6:30 PM">6:30 PM</option>
+                            <option value="6:40 PM">6:40 PM</option>
+                            <option value="6:50 PM">6:50 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:10 PM">7:10 PM</option>
+                            <option value="7:20 PM">7:20 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                            <option value="7:40 PM">7:40 PM</option>
+                            <option value="7:50 PM">7:50 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <button id="editReservation">Edit Value</button>
+                    <hr>
+                    <p style="color: red;">The following values can not be edited. If the invalid value/s is/are found at the following. it is recommended to pass another reservation.</p>
+                    <div class="reservationInfo">
+                        <div class="reservationInfo-content">
+                            <p>Reservation ID: <span id="reservationInfoId"></span></p>
+                            <p>Date of Check-in: <span id="reservationInfoCheckInDate"></span></p>
+                            <p>Room Type: <span id="reservationInfoRoomType"></span></p>
+                            <p>Duration: <span id="reservationInfoDuration"></span></p>
+                        </div>
+                        <div class="reservationInfo-content">
+                            <p>Extension: <span id="reservationInfoExtension"></span></p>
+                            <p>Number of Guest: <span id="reservationInfoNumOfGuest"></span></p>
+                            <p>Amount to pay: <span id="reservationInfoTotalAmountPaid"></span></p>
+                            <p>Reservation Status: <span id="reservationInfoStatus"></span></p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rooms-content">
+            <div class="rooms">
+                <button id="room1" class="room" data-room="1">
+                    ROOM 1 <i class="fa-solid fa-fan"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+                <button class="room aircon" id="room2" data-room="2">
+                    ROOM 2 <i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+            </div>
+            <div class="rooms">
+                <button class="room non-aircon" id="room3" data-room="3">
+                    ROOM 3 <i class="fa-solid fa-fan"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+                <button class="room aircon" id="room4" data-room="4">
+                    ROOM 4 <i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+            </div>
+            <div class="rooms">
+                <button class="room non-aircon" id="room5" data-room="5">
+                    ROOM 5 <i class="fa-solid fa-fan"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+                <button class="room aircon" id="room6" data-room="6">
+                    ROOM 6 <i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+            </div>
+            <div class="rooms">
+                <button class="room non-aircon" id="room7" data-room="7">
+                    ROOM 7<i class="fa-solid fa-fan"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+                <button class="room aircon" id="room8" data-room="8">
+                    ROOM 8 <i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+            </div>
+            <div class="rooms">
+                <button class="room non-aircon" id="room9" data-room="9">
+                    ROOM 9<i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+                <button class="room aircon" id="room10" data-room="10">
+                    ROOM 10<i class="fa-regular fa-snowflake"></i>
+                    <span class="availability-text">Available</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="sliding-panel" id="slidingPanelNonAirconAvail">
+            <div class="close-btn" id="closeBtnNonAircon">&times;</div>
+            <div id="roomInfoAircon">Select a room to see the details.</div>
+            <h3>STANDARD ROOM</h3>
+            <div class="numOfGuest">
+                NUMBER OF GUEST
+                <div class="numOfGuestInput">
+                    <button onclick="updateGuestCount('numberOfGuestNonAircon', false)">-</button>
+                    <input type="text" id="numberOfGuestNonAircon" value="2" oninput="validateInput(this)">
+                    <button onclick="updateGuestCount('numberOfGuestNonAircon', true)">+</button>
+                </div>
+                <p style="color: red;">If the number of guests exceed 2 guests, additional fee of <b>PHP 200.00</b> per guest, maximum of 6 guests per room.</p>
+            </div>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 3, 300)">3 HOURS<br>PHP 300.00</button>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 6, 500)">6 HOURS<br>PHP 500.00</button>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 24, 1000)">24 HOURS<br>PHP 1000.00</button>
+        </div>
+        
+        <div class="sliding-panel" id="slidingPanelAirconAvail">
+            
+            <div class="close-btn" id="closeBtnAircon">&times;</div>
+            <div id="roomInfoNonAircon">Select a room to see the details.</div>
+            <h3>AIR-CONDITIONED ROOM</h3>
+            <div class="numOfGuest">
+                NUMBER OF GUEST
+                <div class="numOfGuestInput">
+                    <button onclick="updateGuestCount('numberOfGuestAircon', false)">-</button>
+                    <input type="text" id="numberOfGuestAircon" value="2" oninput="validateInput(this)">
+                    <button onclick="updateGuestCount('numberOfGuestAircon', true)">+</button>
+                </div>
+                <p style="color: red;">If the number of guests exceed 2 guests, additional fee of <b>PHP 250.00</b> per guest, maximum of 6 guests per room.</p>
+            </div>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 3, 500)">3 HOURS<br>PHP 500.00</button>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 6, 800)">6 HOURS<br>PHP 800.00</button>
+            <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 24, 1500)">24 HOURS<br>PHP 1500.00</button>
+            
+        </div>
+    
+        <div class="sliding-panel" id="slidingPanelUnavail">
+            <div class="close-btn" id="closeBtnUnavail">&times;</div>
+            <div id="roomInfoUnavail">Select a room to see the details.</div>
+            <h2 style="color: red;">OCCUPIED</h2>
+            
+            
+            <div id="unavailDetails">
+                <div class="unavailDetails-content">
+                    <p>ID:<br><span id="UnavailCheckInId"></span></p>
+                    <p>Room Number:<br><span id="UnavailRoomNum"></span></p>
+                    <p>Room Type:<br><span id="UnavailRoomType"></span></p>
+                    <p>Initial Duration:<br><span id="UnavailDuration"></span></p>
+                    <p>Date of Check-in:<br><span id="UnavailCheckInDate"></span></p>
+                    <p>Time In:<br><span id="UnavailCheckInTime"></span></p>
+                </div>
+                <div class="unavailDetails-content">
+                    
+                    <p>Extension:<br><span id="UnavailExtension"></span></p>
+                    <p>Date of Check-out:<br><span id="UnavailCheckOutDate"></span></p>
+                    <p>Time Out:<br><span id="UnavailCheckOutTime"></span></p>
+                    <p>Total Duration:<br><span id="UnavailTotalDuration"></span></p>
+                    <p>Number of Guest:<br><span id="UnavailNumOfGuest"></span></p>
+                    <p>Amount paid:<br><span id="UnavailTotalAmountPaid"></span></p>
+                </div>
+                
+                
+            </div>
+            <button type="button" id="extendHr">EXTEND 1 HOUR</button><br>
+            <button type="button" id="timeOut">TIME OUT</button>
+        </div>
+
+        <div class="confirmationWindow">
+            <div class="paymentConfirmation" id="popupPaymentWindow">
+                <h3>Are you sure the customer paid for the following:</h3>
+                <div class="paymentInfo">
+                    <div id="ConfirmationroomNum">Room Number: </div>
+                    <div id="ConfirmationroomType">Room Type: </div>
+                    <div id="ConfirmationDuration">Duration: </div>
+                    <hr>
+                    <div id="ConfirmationCheckInDate">Date of Check-in: </div>
+                    <div id="ConfirmationCheckInTime">Time In: </div>
+                    <hr>
+                    <div id="ConfirmationCheckOutDate">Date of Check-Out: </div>
+                    <div id="ConfirmationCheckOutTime">Time Out: </div>
+                    <hr>
+                    <div id="ConfirmationAmountPaid">Room Rate: </div>
+                    <div id="ConfirmationNumOfGuest">Number of Guest: </div>
+                    
+                    <div id="ConfirmationTotalAmountPaid">Total Amount Paid: </div>
+                    <p style="color: red;">
+                        <input type="checkbox" id="paymentConfirmationChkbox">
+                        As the admin, I have read all the information above and if I agree to this action, it will be unreversable.
+                    </p>
+                    <div class="btnConfirmation">
+                        <button type="button" id="yesBtn" disabled>YES</button>
+                        <button type="button" id="noBtn" onclick="closePopUpPaymentWindow()">NO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sliding-panel" id="slidingPanelNonAirconAvail">
+        <div class="close-btn" id="closeBtnNonAircon">&times;</div>
+        <div id="roomInfoAircon">Select a room to see the details.</div>
+        <h3>STANDARD ROOM</h3>
+        <div class="numOfGuest">
+            NUMBER OF GUEST
+            <div class="numOfGuestInput">
+                <button onclick="updateGuestCount('numberOfGuestNonAircon', false)">-</button>
+                <input type="text" id="numberOfGuestNonAircon" value="2" oninput="validateInput(this)">
+                <button onclick="updateGuestCount('numberOfGuestNonAircon', true)">+</button>
+            </div>
+            <p style="color: red;">If the number of guests exceed 2 guests, additional fee of <b>PHP 200.00</b> per
+                guest, maximum of 6 guests per room.</p>
+        </div>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 3, 300)">3 HOURS<br>PHP
+            300.00</button>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 6, 500)">6 HOURS<br>PHP
+            500.00</button>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Standard Room', 24, 1000)">24
+            HOURS<br>PHP 1000.00</button>
+    </div>
+
+    <div class="sliding-panel" id="slidingPanelAirconAvail">
+        <div class="close-btn" id="closeBtnAircon">&times;</div>
+        <div id="roomInfoNonAircon">Select a room to see the details.</div>
+        <h3>AIR-CONDITIONED ROOM</h3>
+        <div class="numOfGuest">
+            NUMBER OF GUEST
+            <div class="numOfGuestInput">
+                <button onclick="updateGuestCount('numberOfGuestAircon', false)">-</button>
+                <input type="text" id="numberOfGuestAircon" value="2" oninput="validateInput(this)">
+                <button onclick="updateGuestCount('numberOfGuestAircon', true)">+</button>
+            </div>
+            <p style="color: red;">If the number of guests exceed 2 guests, additional fee of <b>PHP 250.00</b> per
+                guest, maximum of 6 guests per room.</p>
+        </div>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 3, 500)">3
+            HOURS<br>PHP 500.00</button>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 6, 800)">6
+            HOURS<br>PHP 800.00</button>
+        <button class="duration" type="submit" onclick="openPopUpPaymentWindow('Air-conditioned Room', 24, 1500)">24
+            HOURS<br>PHP 1500.00</button>
+
+    </div>
+
+    <div class="sliding-panel" id="slidingPanelUnavail">
+        <div class="close-btn" id="closeBtnUnavail">&times;</div>
+        <div id="roomInfoUnavail">Select a room to see the details.</div>
+        <h2 style="color: red;">OCCUPIED</h2>
+
+        <div id="unavailDetails">
+            <div class="unavailDetails-content">
+                <p>ID:<br><span id="UnavailCheckInId"></span></p>
+                <p>Room Number:<br><span id="UnavailRoomNum"></span></p>
+                <p>Room Type:<br><span id="UnavailRoomType"></span></p>
+                <p>Initial Duration:<br><span id="UnavailDuration"></span></p>
+                <p>Date of Check-in:<br><span id="UnavailCheckInDate"></span></p>
+                <p>Time In:<br><span id="UnavailCheckInTime"></span></p>
+            </div>
+
+            <div class="unavailDetails-content">
+                <p>Extension:<br><span id="UnavailExtension"></span></p>
+                <p>Date of Check-out:<br><span id="UnavailCheckOutDate"></span></p>
+                <p>Time Out:<br><span id="UnavailCheckOutTime"></span></p>
+                <p>Total Duration:<br><span id="UnavailTotalDuration"></span></p>
+                <p>Number of Guest:<br><span id="UnavailNumOfGuest"></span></p>
+                <p>Amount paid:<br><span id="UnavailTotalAmountPaid"></span></p>
+            </div>
+
+        </div>
+        <button type="button" id="extendHr">EXTEND 1 HOUR</button><br>
+        <button type="button" id="timeOut">TIME OUT</button>
+    </div>
+
+    <div class="confirmationWindow">
+        <div class="paymentConfirmation" id="popupPaymentWindow">
+            <h3>Are you sure the customer paid for the following:</h3>
+            <div class="paymentInfo">
+                <div id="ConfirmationroomNum">Room Number: </div>
+                <div id="ConfirmationroomType">Room Type: </div>
+                <div id="ConfirmationDuration">Duration: </div>
+                <hr>
+                <div id="ConfirmationCheckInDate">Date of Check-in: </div>
+                <div id="ConfirmationCheckInTime">Time In: </div>
+                <hr>
+                <div id="ConfirmationCheckOutDate">Date of Check-Out: </div>
+                <div id="ConfirmationCheckOutTime">Time Out: </div>
+                <hr>
+                <div id="ConfirmationAmountPaid">Room Rate: </div>
+                <div id="ConfirmationNumOfGuest">Number of Guest: </div>
+
+                <div id="ConfirmationTotalAmountPaid">Total Amount Paid: </div>
+                <p style="color: red;">
+                    <input type="checkbox" id="paymentConfirmationChkbox">
+                    As the admin, I have read all the information above and if I agree to this action, it will be
+                    unreversable.
+                </p>
+                <div class="btnConfirmation">
+                    <button type="button" id="yesBtn" disabled>YES</button>
+                    <button type="button" id="noBtn" onclick="closePopUpPaymentWindow()">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Connecting to the database...</p>
+    </div>
+
+    <div class="uselessDivs" style="display: none;"></div>
+    <div class="dropdown-menu"></div>
+    </div>
+
+    <script type="module" src="js/roomManagement.js"></script>
+    <script type="module" src="js/authorization.js"></script>
+    <script type="module" src="js/checkInCheckOutManagement.js"></script>
+    <script type="module" src="js/roomChecking.js"></script>
+    <script type="module" src="js/reservationManagement.js"></script>
+    <script type="module" src="js/employeeFunctions.js"></script>
+
+    <script src="js/otherFunctions.js"></script>
+    <script src="https://kit.fontawesome.com/b629388bc1.js" crossorigin="anonymous"></script>
+</body>
+</html>

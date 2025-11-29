@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motel Showcase Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8343924862825006" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <button class="menu-button">
+            <img src="img/menu.png" class="menuLogo">
+        </button>
+        <a href="https://lcdedb.web.app"><img src="img/logo.jpg" class="logo"></a>
+        
+        <div class="dropdown-nav">
+            <a href="#reservation">RESERVATION</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#displayComments">COMMENTS</a>
+            <a href="#location">LOCATION</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#aboutus">ABOUT US</a>
+        </div>
+        <div class="nav">
+            <a href="#reservation">RESERVATION</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#displayComments">COMMENTS</a>
+            <a href="#commentsAndInfo">LOCATION</a>
+            <a href="#commentsAndInfo">CONTACT</a>
+            <a href="#aboutus">ABOUT US</a>
+        </div>
+        <div class="none"></div>
+    </header>
+
+<div id="ai-disclaimer-popup" class="popup" style="display: block; z-index: 2147483647;">
+    <div class="popup-content" style="text-align: center; height: auto; padding-bottom: 30px;">
+        <h2>Disclaimer</h2>
+        <p>Please be advised that all images used on this website are <b>AI-generated</b> and are for illustrative purposes only.</p>
+        <br>
+        <button type="button" class="confirm-understand" style="float: none; margin: 0 auto; cursor: pointer;" onclick="document.getElementById('ai-disclaimer-popup').style.display='none'">I Understand</button>
+    </div>
+</div>
+
+    <div class="container" id="reservation">
+        <div class="background"></div>
+        <div class="info">
+            <h1>RESERVATION</h1>
+            <div class="search-container">
+                <div>
+                    <input type="text" id="searchBar" placeholder="Already have reservation? Enter your Reservation ID here" />
+                    <i class="search-icon">&#128269;</i>
+                </div>
+                <div id="reservationQueryContainer" class="reservationQuery-container">
+                    <input type="text" id="phoneNumberReservationQuery" placeholder="Enter phone number linked to the reservation" />
+                    <select id="checkInTimeReservationQuery">
+                        <option value="" selected disabled hidden>Select the check in time linked to your reservation</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="8:10 AM">8:10 AM</option>
+                        <option value="8:20 AM">8:20 AM</option>
+                        <option value="8:30 AM">8:30 AM</option>
+                        <option value="8:40 AM">8:40 AM</option>
+                        <option value="8:50 AM">8:50 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="9:10 AM">9:10 AM</option>
+                        <option value="9:20 AM">9:20 AM</option>
+                        <option value="9:30 AM">9:30 AM</option>
+                        <option value="9:40 AM">9:40 AM</option>
+                        <option value="9:50 AM">9:50 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="10:10 AM">10:10 AM</option>
+                        <option value="10:20 AM">10:20 AM</option>
+                        <option value="10:30 AM">10:30 AM</option>
+                        <option value="10:40 AM">10:40 AM</option>
+                        <option value="10:50 AM">10:50 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="11:10 AM">11:10 AM</option>
+                        <option value="11:20 AM">11:20 AM</option>
+                        <option value="11:30 AM">11:30 AM</option>
+                        <option value="11:40 AM">11:40 AM</option>
+                        <option value="11:50 AM">11:50 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="12:10 PM">12:10 PM</option>
+                        <option value="12:20 PM">12:20 PM</option>
+                        <option value="12:30 PM">12:30 PM</option>
+                        <option value="12:40 PM">12:40 PM</option>
+                        <option value="12:50 PM">12:50 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="1:10 PM">1:10 PM</option>
+                        <option value="1:20 PM">1:20 PM</option>
+                        <option value="1:30 PM">1:30 PM</option>
+                        <option value="1:40 PM">1:40 PM</option>
+                        <option value="1:50 PM">1:50 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="2:10 PM">2:10 PM</option>
+                        <option value="2:20 PM">2:20 PM</option>
+                        <option value="2:30 PM">2:30 PM</option>
+                        <option value="2:40 PM">2:40 PM</option>
+                        <option value="2:50 PM">2:50 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="3:10 PM">3:10 PM</option>
+                        <option value="3:20 PM">3:20 PM</option>
+                        <option value="3:30 PM">3:30 PM</option>
+                        <option value="3:40 PM">3:40 PM</option>
+                        <option value="3:50 PM">3:50 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="4:10 PM">4:10 PM</option>
+                        <option value="4:20 PM">4:20 PM</option>
+                        <option value="4:30 PM">4:30 PM</option>
+                        <option value="4:40 PM">4:40 PM</option>
+                        <option value="4:50 PM">4:50 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="5:10 PM">5:10 PM</option>
+                        <option value="5:20 PM">5:20 PM</option>
+                        <option value="5:30 PM">5:30 PM</option>
+                        <option value="5:40 PM">5:40 PM</option>
+                        <option value="5:50 PM">5:50 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                        <option value="6:10 PM">6:10 PM</option>
+                        <option value="6:20 PM">6:20 PM</option>
+                        <option value="6:30 PM">6:30 PM</option>
+                        <option value="6:40 PM">6:40 PM</option>
+                        <option value="6:50 PM">6:50 PM</option>
+                        <option value="7:00 PM">7:00 PM</option>
+                        <option value="7:10 PM">7:10 PM</option>
+                        <option value="7:20 PM">7:20 PM</option>
+                        <option value="7:30 PM">7:30 PM</option>
+                        <option value="7:40 PM">7:40 PM</option>
+                        <option value="7:50 PM">7:50 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                    </select>
+                </div>
+            </div>
+            
+            <br>Click <a class="eventtac">here</a> if you are planning a reservation for an <b>event rental.</b>
+            <div id="event-popup" class="popup2">
+                <div class="popup-content2">
+                    <span class="close-btn2">&times;</span>
+                    <h2>Event Reservation</h2>
+                    <p>
+                    <ul>
+                        <li>We do not entertain event rental reservation via this website.</li>
+                        <li>Personal appearance of the person plan to rent is recommendable as there will be a contract
+                            in place.</li>
+                        <li>If inquiries is your purpose, you can contact us by clicking <a href="#contact">here</a> or
+                            visit us here in the motel.</li>
+                        <li>Face-to-face meeting of both parties is must because of how both parties can agree for the
+                            event rental.</li>
+                        <li>Minimum package: 50 pax - 3 hours - <b>PHP 5,000.00</b></li>
+
+                    </ul>
+                    </p>
+                </div>
+            </div><br><br>
+            <form action="" id="reservationForm">
+                <div class="reservationInfo">
+                    <label for="lastName" class="hide-label">LAST NAME:</label>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+                <small class="error-message" id="lastNameError"></small>
+                <div class="reservationInfo">
+                    <label for="firstName" class="hide-label">FIRST NAME:</label>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                </div>
+                <small class="error-message" id="firstNameError"></small>
+                <div class="reservationInfo">
+                    <label for="phoneNumber" class="hide-label">PHONE NUMBER:</label>
+                    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+                </div>
+                <small class="error-message" id="phoneNumberError"></small>
+                <div class="reservationInfo">
+                    <label for="emailAddress" class="hide-label">EMAIL ADDRESS:</label>
+                    <input type="email" id="emailAddress" placeholder="Email Address" required>
+                </div>
+                <small class="error-message" id="emailAddressError"></small>
+            
+                <div class="reservationInfo">
+                    <label>DATE: </label><input type="date" id="date" min="" required>
+                </div>
+                <small class="error-message" id="dateError"></small>
+                
+                <form action="/submit" method="post">
+                    <div class="reservationInfo">
+                        <label>ROOM TYPE:</label>
+                        <select id="dropdown0" name="dropdown">
+                            <option value="AIR-CONDITIONED ROOM" selected>AIR-CONDITIONED ROOM</option>
+                            <option value="STANDARD ROOM">STANDARD ROOM</option>
+                        </select>
+                    </div>
+                </form>
+                
+                <form action="/submit" method="post">
+                    <div class="reservationInfo">
+                        <label>STARTING TIME:</label>
+                        <select id="dropdownTime" name="dropdown">
+                            <option value="8:00 AM">8:00 AM</option>
+                            <option value="8:10 AM">8:10 AM</option>
+                            <option value="8:20 AM">8:20 AM</option>
+                            <option value="8:30 AM">8:30 AM</option>
+                            <option value="8:40 AM">8:40 AM</option>
+                            <option value="8:50 AM">8:50 AM</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="9:10 AM">9:10 AM</option>
+                            <option value="9:20 AM">9:20 AM</option>
+                            <option value="9:30 AM">9:30 AM</option>
+                            <option value="9:40 AM">9:40 AM</option>
+                            <option value="9:50 AM">9:50 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:10 AM">10:10 AM</option>
+                            <option value="10:20 AM">10:20 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="10:40 AM">10:40 AM</option>
+                            <option value="10:50 AM">10:50 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:10 AM">11:10 AM</option>
+                            <option value="11:20 AM">11:20 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="11:40 AM">11:40 AM</option>
+                            <option value="11:50 AM">11:50 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:10 PM">12:10 PM</option>
+                            <option value="12:20 PM">12:20 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="12:40 PM">12:40 PM</option>
+                            <option value="12:50 PM">12:50 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:10 PM">1:10 PM</option>
+                            <option value="1:20 PM">1:20 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="1:40 PM">1:40 PM</option>
+                            <option value="1:50 PM">1:50 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="2:10 PM">2:10 PM</option>
+                            <option value="2:20 PM">2:20 PM</option>
+                            <option value="2:30 PM">2:30 PM</option>
+                            <option value="2:40 PM">2:40 PM</option>
+                            <option value="2:50 PM">2:50 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="3:10 PM">3:10 PM</option>
+                            <option value="3:20 PM">3:20 PM</option>
+                            <option value="3:30 PM">3:30 PM</option>
+                            <option value="3:40 PM">3:40 PM</option>
+                            <option value="3:50 PM">3:50 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="4:10 PM">4:10 PM</option>
+                            <option value="4:20 PM">4:20 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                            <option value="4:40 PM">4:40 PM</option>
+                            <option value="4:50 PM">4:50 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="5:10 PM">5:10 PM</option>
+                            <option value="5:20 PM">5:20 PM</option>
+                            <option value="5:30 PM">5:30 PM</option>
+                            <option value="5:40 PM">5:40 PM</option>
+                            <option value="5:50 PM">5:50 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="6:10 PM">6:10 PM</option>
+                            <option value="6:20 PM">6:20 PM</option>
+                            <option value="6:30 PM">6:30 PM</option>
+                            <option value="6:40 PM">6:40 PM</option>
+                            <option value="6:50 PM">6:50 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:10 PM">7:10 PM</option>
+                            <option value="7:20 PM">7:20 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                            <option value="7:40 PM">7:40 PM</option>
+                            <option value="7:50 PM">7:50 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                        </select>
+                    </div>
+                    <small class="error-message" id="startingTimeError"></small>
+
+                </form>
+
+                <form action="/submit" method="post">
+                    <div class="reservationInfo">
+                        <label>DURATION:</label>
+                        <select id="dropdown1" name="dropdown">
+                            <option value="3" selected>3 HOURS</option>
+                            <option value="6">6 HOURS</option>
+                            <option value="24">24 HOURS</option>
+                        </select>
+                    </div>
+                </form>
+
+                <form action="/submit" method="post">
+                    <div class="reservationInfo">
+                        <label>EXTENSION:</label>
+                        <select id="dropdown2" name="dropdown">
+                            <option value="0" selected>NONE</option>
+                            <option value="1">1 HOUR</option>
+                            <option value="2">2 HOURS</option>
+                            <option value="3">3 HOURS</option>
+                        </select>
+                    </div>
+                </form>
+
+                <form action="/submit" method="post">
+                    <div class="reservationInfo">
+                        <label for="numOfGuest">NUMBER OF GUESTS: </label>
+                        <select id="numOfGuest" name="numOfGuest" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                </form>
+                <div id="terms-popup" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <span class="close-btn">&times;</span>
+                        <h2>Terms and Conditions</h2>
+                        <p>Please read and understand the following terms and conditions carefully before proceeding with your reservation:</p>
+                        <ul>
+                            <li><strong>Reservation Payment</strong>
+                                <ul>
+                                    <li>Once you make a reservation, you must pay the full reservation fee displayed by the system.</li>
+                                    <li>The reservation fee is <strong>NON-REFUNDABLE</strong>.</li>
+                                    <li>Payments are accepted only via GCash using the provided number or QR code. The hotel is not responsible for payment errors caused by guest negligence.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cancellation Policy</strong>
+                                <ul>
+                                    <li>You can cancel your reservation, but the amount paid will not be refunded.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Check-In Policy</strong>
+                                <ul>
+                                    <li>Guests must arrive at least 10 minutes before their selected reservation time.</li>
+                                    <li>If you arrive more than 10 minutes after your selected time, your reservation will be considered <strong>INVALID</strong>.</li>
+                                    <li>Room assignments will be based on the room type indicated in your reservation upon arrival.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Modification of Personal Information</strong>
+                                <ul>
+                                    <li>Guests can modify personal information such as name, phone number, email address, and check-in time by contacting the hotel.</li>
+                                    <li>Other details cannot be modified as the system automatically calculates the total payment based on the reservation details.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Security</strong>
+                                <ul>
+                                    <li>The hotel is not responsible for the loss or damage of personal belongings during your stay.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Hotel Rules</strong>
+                                <ul>
+                                    <li>Smoking is strictly prohibited in all rooms.</li>
+                                    <li>Pets are welcome; however, guests are expected to ensure their pets are well-behaved and do not cause disturbances or damage.</li>
+                                    <li>Guests are responsible for any damage caused to hotel property during their stay. Charges will apply accordingly.</li>
+                                    <li>Guests must comply with all hotel policies and rules. The hotel reserves the right to refuse service to anyone violating these terms.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Extensions and Changes</strong>
+                                <ul>
+                                    <li>Extensions of stay or changes to your reservation are subject to availability and additional charges.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>By completing your reservation, you agree to abide by these terms and conditions.</p>
+
+                        <input type="checkbox" class="checkbox" id="termsCheckbox">
+                        I <b> agree to the terms and conditions</b> by checking this and confirming my reservation.
+                        </p>
+                        <button id="confirmTerms" class="confirm">CONFIRM</button>
+                    </div>
+                </div>
+            </form>
+            <button id="nextButton" class="confirm" type="button">NEXT</button>
+        </div>
+        <div class="backgroundphoto"></div>
+    </div>
+
+    <div class="postPaymentModal">
+        <div class="postPaymentWindow">
+            <span class="close-btn" id="closeReservationModal">&times;</span>
+            <h1>Reservation Details</h1>
+            <p style="color: red;">Please take a screenshot of this window as proof of reservation</p>
+            <hr>
+            <div>
+                <h1 id="reservationId">Reservation ID: <i>Reservation ID</i></h1>
+                <h3 id="statusToDisplay"><b>Amount to pay in GCash:</b></h3>
+            </div>
+            <div>
+                <div>
+                    <p id="fullName"><b>Full name:</b></p>
+                    <p id="emailAddressDisplay"><b>Email address:</b></p>
+                    <p id="phoneNumberDisplay"><b>Phone Number:</b></p>
+                    <p id="reservationDateDisplay"><b>Reservation Date:</b></p>
+                    <p id="reservationTimeDisplay"><b>Reservation Time of Check-in:</b></p>
+                </div>
+                <div>
+                    <p id="roomTypeDisplay"><b>Room Type:</b></p>
+                    <p id="durationDisplay"><b>Duration:</b></p>
+                    <p id="extensionDisplay"><b>Extension:</b></p>
+                    <p id="numberOfGuestsDisplay"><b>Number of Guests:</b></p>
+                    <hr>
+                </div>
+                <div id="reservationPayment">
+                    <img src="img/gcash.jpg" id="gcashInfo">
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="reservationPendingPaymentStatus" id="reservationPendingPaymentStatus">
+                        <p><b>Proof of Payment</b></p>
+                    <div>
+                        <div>
+                            <label>Enter Reference Code of your payment:</label>
+                            <input type="text" id="referenceCodeGCash" placeholder="Reference Code">
+                        </div>
+                        <div>
+                            <label>Please attach the receipt from GCash:</label>
+                            <input type="file" id="receiptImageInput" accept="image/png, image/jpeg, image/jpg">
+                        </div>
+                        <button id="submitProofOfPaymentBtn">SUBMIT PROOF OF PAYMENT</button>
+                    </div>
+                </div>
+
+                <div class="reservationPaidStatus" id="reservationPaidStatus" style="display: none;">
+                    <p><b>Proof of Payment</b></p>
+                    <span>
+                        <b><p id="referenceCodeGCashDisplay"></p></b>
+                        <b>Receipt Provided: </b>
+                        <b><a target="_blank" id="reservationReceiptDisplay">View Receipt</a></b>
+                    </span><br>
+                    <button id="cancelReservation">CANCEL RESERVATION</button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="cancelReservation">
+            <span class="close-btn" id="closeCancellingReservationModal">&times;</span>
+            <h2 id="reservationID" style="color: red;"></h2>
+            <p id="reservationAmountPaid"></p>
+            <input type="text" id="reasonForCancellation" placeholder="Enter your reason of cancellation">
+            <input type="text" id="cancellingReservationID" placeholder="Enter your reservation ID for confimation">
+        </div>
+    </div>
+
+
+    <div class="container3" id="gallery">
+        <div class="container3-content">
+            <h1>Motel Showcase Website</h1>
+            <p>Discover the charm of the motel through our gallery showcase. Each image highlights the motel's
+                elegant interiors, serene outdoor spaces, and luxurious amenities, capturing the essence of a tranquil
+                retreat.</p>
+            <div class="gallery-slider">
+                <div class="gallery-track">
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                    <div class="gallery-item"><img src="img/bg02.png"></div>
+                    <div class="gallery-item"><img src="img/bg03.png"></div>
+                    <div class="gallery-item"><img src="img/bg04.png"></div>
+                    <div class="gallery-item"><img src="img/bg05.png"></div>
+                    <div class="gallery-item"><img src="img/bg06.png"></div>
+                    <div class="gallery-item"><img src="img/bg07.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="displayComments" id="displayComments">
+        <h2>Comments</h2>
+        <div class="comments-list" id="commentsList"></div>
+    </div>
+
+    <div class="commentsAndInfo" id="commentsAndInfo">
+        <div class="container4" id="comments">
+            <div class="comment-box">
+                <h2>Leave a Comment</h2>
+                <div class="input-group">
+                    Name: <input type="text" id="nameInput">
+                    Email: <input type="email" id="emailInput">
+                    Time and date of visit: <input type="datetime-local" id="dateTimeInput">
+                    Proof of visit: <input type="file" id="fileInput">
+                    Comment / rating: <textarea id="commentInput" rows="4"></textarea>
+                </div>
+                <button id="submitComment">Submit</button>
+            </div>
+            <br>
+        </div>
+        
+        <div class="container2" id="location">
+            <div class="content">
+                <h2>Location</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16013035.156128395!2d111.89927258597922!3d11.520807349813401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x324053215f87de63%3A0x784790ef7a29da57!2sPhilippines!5e0!3m2!1sen!2sph!4v1763872091958!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="container5" id="contact">
+            <h2>Contact info</h2>
+            <ul>
+                <a target="_blank">
+                    <li><img src="img/location.png" class="contactinfo">Philippines</li>
+                </a><br>
+                <li><img src="img/phone.png" class="contactinfo">09xx xxx xxxx</li><br>
+                <a target="_blank">
+                    <li><img src="img/facebook.png" class="contactinfo">Facebook Page</li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="container6" id="aboutus">
+        <div class="container6-content"></div>
+        <div class="container6-content3">
+            <br><br>
+            <h1>About the Motel</h1>
+            <p>
+                Welcome to the motel, your serene retreat in the Philippines. Opened in 2023, we have welcomed hundreds and counting customers in our paradise. Our charming motel, with its distinctive turquoise facade, offers a welcoming atmosphere for both leisure and business travelers.
+
+                We pride ourselves on exceptional hospitality, tight security, and personalized service. Our spacious rooms feature cozy bedding, adequate bathing area, and a relaxing experience. The motel is the perfect base for exploring the Philippines. Our concierge team is ready to ensure your stay is seamless and enjoyable.
+
+                Experience comfort, luxury, and convenience at the motel. We look forward to welcoming you!
+            </p>
+            <h1><a href="login.html" class="loginpage" target="_blank">Staffs and Officers</a></h1>
+            <div class="container6-content1">
+               <div class="container6-content2">
+                    <img src="img/user.png" class="staffphoto">
+                    <div>
+                        <h3>Juan Dela Cruz</h3>
+                        <p>OWNER</p>
+                    </div>
+                </div>
+                <div class="container6-content2">
+                    <img src="img/user.png" class="staffphoto">
+                    <div>
+                        <h3>Maria Santos</h3>
+                        <p>EMPLOYEE</p>
+                    </div>
+                </div>
+                <div class="container6-content2">
+                    <img src="img/user.png" class="staffphoto">
+                    <div>
+                        <h3>Carlos Reyes</h3>
+                        <p>EMPLOYEE</p>
+                    </div>
+                </div>
+                <div class="container6-content2">
+                    <img src="img/user.png" class="staffphoto">
+                    <div>
+                        <h3>Anna Lopez</h3>
+                        <p>EMPLOYEE</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div id="loadingScreen" class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        &copy; 2024 CHRISTIAN LUIS ACERON
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script type="module" src="js/savingReservation.js"></script>
+    <script type="module" src="js/commentHandling.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
